@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "初识Jekyll"
+title: "利用Jekyll搭建自己的个人博客"
 category: develop
 tags: [jekyll]
 description: |

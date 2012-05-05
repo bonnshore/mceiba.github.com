@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "神奇的Liquid"
+title: "使用Liquid模板语言"
 category: develop
 tags: [jekyll]
 description: |
