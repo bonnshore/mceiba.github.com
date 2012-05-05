@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="span12">
+    <div class="content landing">
+      <div class="span7" style="width:600px; margin-left: 0px; margin-right: 0px; padding-right:0px;">
+        {{ content }}
+      </div>
+      <div class="span4 alert" style="width=320px; float: right; margin-left: 0px; margin-right: 0px; padding-right:10px;">
+      <a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=0cafc549c3b19e22734695a157ca9c4004ee06a222bb5f79" style="float:right"><img border="0"  src="http://wpa.qq.com/imgd?IDKEY=0cafc549c3b19e22734695a157ca9c4004ee06a222bb5f79&pic=43" alt="猛击可以给我发消息" title="猛击可以给我发消息"></a>
+      <h1 id="start-now" style="margin-left: 0px; font-size: 22px;">欢迎来到晨旭园！</h1> 
+      <div style="width: 100%; float: right; margin-left: 0px; margin-right: 0px;">
+        <iframe width="100%" height="520" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=500&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1651191467&verifier=80fcc888&dpc=1"></iframe>
+      </div>
+      <div id="mc_embed_signup" style="width: 100%; float: right; margin-left: 0px; margin-right: 0px;">
+        <ul id="tab-list" class="nav nav-pills">
+          <li><a href="categories.html">博文分类</a></li>
+          <li><a href="tags.html">我的标签</a></li>
+          <li><a href="archive.html">文章存档</a></li>
+          <!--<li><a href="pages.html">浏览页面</a></li>-->
+        </ul>
+        <div id="tab-content-wrapper">
+          <div>
+            <ul class="tag_box inline">
+              {% assign categories_list = site.categories %}
+              {% include JB/categories_list %}
+            </ul>
+
+            {% for category in site.categories %} 
+            <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+            <ul>
+              {% assign pages_list = category[1] %}  
+              {% include JB/pages_list %}
+            </ul>
+            {% endfor %}
+          </div>
+
+          <div>
+            <ul class="tag_box inline">
+              {% assign tags_list = site.tags %}  
+              {% include JB/tags_list %}
+            </ul>
+
+            {% for tag in site.tags %} 
+            <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
+            <ul>
+              {% assign pages_list = tag[1] %}  
+              {% include JB/pages_list %}
+            </ul>
+            {% endfor %}
+          </div>
+
+          <div>
+            {% assign posts_collate = site.posts %}
+            {% include JB/posts_collate %}
+          </div>
+
+        </div>
+      </div>
+
+      </div>     
+    </div>  
+  </div>
+</div>
