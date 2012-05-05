@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "markdown语法"
+title: "Markdown语法"
 category: develop
 tags: [jekyll]
 description: |
