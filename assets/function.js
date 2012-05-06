@@ -15,9 +15,9 @@ function showLocale(objD)
 	var ss = objD.getSeconds();
 	if(ss<10) ss = '0' + ss;
 	var ww = objD.getDay();
-	if  ( ww==0 )  colorhead="<font color=\"#FF0000\">";
-	if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#373737\">";
-	if  ( ww==6 )  colorhead="<font color=\"#008000\">";
+	if  ( ww==0 )  colorhead="<font color=\"#bd362f\">";
+	if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#222\">";
+	if  ( ww==6 )  colorhead="<font color=\"#46a546\">";
 	if  (ww==0)  ww="星期日";
 	if  (ww==1)  ww="星期一";
 	if  (ww==2)  ww="星期二";
