@@ -5,12 +5,10 @@
         {{ content }}
       </div>
       <div class="span4 divbox" style="width=35%; float: right; margin-left: 0px; margin-right: 0px;padding-right:10px; color:#F7F7F9;">
-      <a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=0cafc549c3b19e22734695a157ca9c4004ee06a222bb5f79" style="float:right"><img border="0"  src="http://wpa.qq.com/imgd?IDKEY=0cafc549c3b19e22734695a157ca9c4004ee06a222bb5f79&pic=43" alt="猛击可以给我发消息" title="猛击可以给我发消息"></a>
+      {% include custom/qq %}
       <h1 id="start-now" style="margin-left: 0px; font-size: 22px;">欢迎来到晨旭园！</h1>
       {% include custom/searchbox %} 
-      <div style="width: 100%; float: right; margin-left: 0px; margin-right: 0px;">
-        <iframe width="100%" height="520" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=500&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1651191467&verifier=80fcc888&dpc=1"></iframe>
-      </div>
+      {% include custom/weibo %}
       <div id="mc_embed_signup" style="width: 100%; float: right; margin-left: 0px; margin-right: 0px;">
         <ul id="tab-list" class="nav nav-pills">
           <li><a href="categories.html">博文分类</a></li>
