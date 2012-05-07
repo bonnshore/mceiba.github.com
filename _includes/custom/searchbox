@@ -1,4 +1,4 @@
-<form method="get" action="http://www.google.com/search" target="google_window">
+<form method="get" action="http://www.google.com/search" target="google_window" style="margin-bottom: 0px;">
 	<div>	
 		<input type="text" value="" name="q" />
 		<input type="submit" name=”btnG” id="searchsubmit" value=" 站内搜索 " />
