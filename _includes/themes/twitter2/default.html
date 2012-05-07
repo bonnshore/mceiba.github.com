@@ -22,10 +22,10 @@
 
   <body>
     <div id="navbar" class="navbar navbar-fixed-top">
-      <div class="navbar-inner" style="background:#342A14">
-        <div class="conainer" style="margin-left:20px; overflow:hidden">
+      <div class="navbar-inner" style="background:#2c2c2c">
+        <div class="conainer" style="margin-left:20px; margin-right:20px; overflow:hidden">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
+          <ul class="nav" style="font-weight: 250;">
             <li class="divider-vertical"></li>
             {% assign pages_list = site.topbar %}
             {% include JB/pages_list %}
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div id="main" class="container" style="position: relative; padding-top: 50px; margin-top: 8px;>
+    <div id="main" class="container" style="position: relative;>
       {{ content }}
       <hr>
       <footer class="footer" style="text-align:center; margin:40px 0">

@@ -32,10 +32,10 @@ Usage:
 
     <dt>
     <h4 style="margin-top:0px;margin-bottom:4px; color:#333333; font-weight: 250;">{{ post.title }}</h4>
-    <span class="label" style="float:right; margin-left:10px; margin-right:5px; background-color:#5bc0de">{{ post.date | date: "%B %e, %Y" }}</span>
-    <div class="thumbnail" style="color:#F5F5F5;">
+    <span class="label" style="float:right; margin-left:10px; margin-right:5px; background-color:#5bc0de; font-weight: 180;">{{ post.date | date: "%B %e, %Y" }}</span>
+    <div class="thumbnail" style="background-color: #FFFFFF;">
     <p style="color:#333333; font-weight: normal;">{{post.description}}</p>
-    <span style="float:right; margin-right:10px; color:#0088CC;"><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文 &raquo; </a></span>
+    <div align="right" style="margin-right:10px; color:#0088CC; font-weight: 200;"><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文 &raquo; </a></div>
     </div>
     <hr/ style="margin-top:10px; margin-bottom:4px; style="padding-top:8px; padding-bottom:8px;">
     </dt>
