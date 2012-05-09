@@ -13,12 +13,16 @@ description: |
   1. 安装[RubyInstaller](http://rubyinstaller.org/downloads/)
   2. 安装[DevKit](http://rubyinstaller.org/downloads/)
   3. 安装Jekyll：
-      <pre><code>$ gem install jekyll</code></pre>
+  {% highlight bash %}
+  $ gem install jekyll
+  {% endhighlight %}
   4. 安装Python（推荐Python 2.7.2）
   5. 安装Python [setuptools](http://pypi.python.org/pypi/setuptools)，找对应的exe文件下载安装。
   6. 添加 C:\Python27\Scripts（假设你的Python安装在C盘根目录下）到你的path
   7. 安装pygments:
-      <pre><code>$ easy_install pygments</code></pre>
+  {% highlight bash %}
+  $ easy_install pygments
+  {% endhighlight %}
   8. 安装windows下的Git——[msysGit](http://msysgit.github.com/)
   9. 在Github上创建一个账户。Github会引导你如何进行简单的设置，如果你没用过Git，没关系，只管照做。
 
@@ -34,11 +38,12 @@ description: |
 
 ### 2 - 安装Jekyll引导程序（Jekyll-Bootstrap）
 <h3 id="2__install_jekyllbootstrap" style="display:none">2 - Install Jekyll-Bootstrap</h3>
-
-    $ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
-    $ cd USERNAME.github.com
-    $ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
-    $ git push origin master
+{% highlight bash %}
+$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+$ cd USERNAME.github.com
+$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+$ git push origin master
+{% endhighlight %}
 
 ### 3 - enjoy
 
@@ -48,10 +53,11 @@ description: |
 ### \*已经在GitHub上创建的Blog?
 
 如果你安装了Jekyll，你可以在本地预览你的Blog:
-
-    $ git clone https://github.com/plusjade/jekyll-bootstrap.git
-    $ cd jekyll-bootstrap
-    $ jekyll --server
+{% highlight bash %}
+$ git clone https://github.com/plusjade/jekyll-bootstrap.git
+$ cd jekyll-bootstrap
+$ jekyll --server
+{% endhighlight %}
 
 在浏览器预览[http://localhost:4000](http://localhost:4000).
 
@@ -62,40 +68,43 @@ description: |
 ###本地运行Jekyll
 
 假设你已经安装好了jekyll-bootstrap，以及其他一些基本运行环境和工具，首先启动你本地的WEBrick服务器（Ruby自带的）：
-
-    $ cd USERNAME.github.com 
-    $ jekyll --server
-    # 别忘了把USERNAME换成你的GitHub用户名。
+{% highlight bash %}
+$ cd USERNAME.github.com 
+$ jekyll --server
+# 别忘了把USERNAME换成你的GitHub用户名。
+{% endhighlight %}
 
 你的Blog在这预览: [http://localhost:4000/](http://localhost:4000/)。
 
 ###创建第一篇博文
-
-    $ rake post title="Hello World"
+{% highlight bash %}
+$ rake post title="Hello World"
+{% endhighlight %}
 
 默认情况下rake命令会在你的_posts目录下创建一个名为\[年-月-日-posttitle.md\]的文件，例如2012-05-04-Hello-World.md，名称中的空格会转换成“-”，时间为当前系统时间。当然这些都是可配置的。
 
 rake命令默认不会覆盖掉相同名称的文件。
 
 ###创建第一个页面
+{% highlight bash %}
+# 根目录下创建页面
+$ rake page name="about.md"
 
-    # 根目录下创建页面
-    $ rake page name="about.md"
+# 自定义目录下创建页面
+$ rake page name="pages/about.md"
 
-    # 自定义目录下创建页面
-    $ rake page name="pages/about.md"
-
-    # 创建类似./pages/about/index.html目录结构的页面
-    $ rake page name="pages/about"
+# 创建类似./pages/about/index.html目录结构的页面
+$ rake page name="pages/about"
+{% endhighlight %}
 
 ###发布
 
 完成一篇博文或者做一些修改之后可以用简单的git命令提交到远程的Github版本库。同时Github可以将md文件解析成html文件，通过USERNAME.github.com就可以访问刚才提交的博文。
-
-    $ git add .
-    $ git commit -m "Add new content"
-    $ git push origin master
-
+{% highlight bash %}
+$ git add .
+$ git commit -m "Add new content"
+$ git push origin master
+{% endhighlight %}
 
 至此你就可以写自己的blog like a hacker。
 
@@ -109,41 +118,48 @@ rake命令默认不会覆盖掉相同名称的文件。
 
 由于windows下的git控制台MinGW默认不支持中文编码，需要将其设置为UTF-8，有两种解决方案：
 
-  **临时**：控制台输入以下语句
-    $ export LC_ALL=en_US.UTF-8
-    $ export LANG=en_US.UTF-8
-  **永久**：添加两个用户自定义的环境变量，LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8（你想的没错，就是修改windows环境变量）
-</ul>
+**临时**：控制台输入以下语句
+{% highlight bash %}
+$ export LC_ALL=en_US.UTF-8
+$ export LANG=en_US.UTF-8
+{% endhighlight %}
+**永久**：添加两个用户自定义的环境变量，LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8（你想的没错，就是修改windows环境变量）
 
 另外Jekyll默认的Markdown引擎markup对中文的解析不是很好，建议换成rdiscount。在_config.yml文件中pygments: true上一行添加markdown: rdiscount。在此之前你必须首先安装Rdiscount。
-
-    $ gem install rdiscount
+{% highlight bash %}
+$ gem install rdiscount
+{% endhighlight %}
 
 ### 2. Liquid error: No such file or directory - pygmentize
 
 没有安装Pygments的缘故，如果你安装了python，只需要easy install。
-	$ easy_install Pygments
+{% highlight bash %}
+$ easy_install Pygments
+{% endhighlight %}
 
 ### 3. Liquid error: bad file descriptor
 
 我的电脑上同时装了python2.7和python3.2，我想是这个原因。需要给albino.rb文件打个补丁，假设你的Ruby安装在D:\Program\，并且你已经把[albino-windows-refactor.patch补丁文件](https://gist.github.com/2592525)copy到了下边的目录：
-
-    $ cd D:\Program\Ruby193\lib\ruby\gems\1.9.1\gems\albino-1.3.3\lib
-    $ patch < albino-windows-refactor.patch
+{% highlight bash %}
+$ cd D:\Program\Ruby193\lib\ruby\gems\1.9.1\gems\albino-1.3.3\lib
+$ patch < albino-windows-refactor.patch
+{% endhighlight %}
 
 ### 4. 侧边栏二级目录的链接不起作用
 
 这个问题花了不少时间，最终还是未能找到问题所在，无奈，只有自己动手丰衣足食，自己写js搞定。
 
 首先看一下源码，在assets\app.js文件中的Toc中看可以看到：
-
-    node.children.each(function(){
-        cache += '<li class="sub"><a href="#'+ this.id + '">'+ $(this).text() + '</a></li>';
-      })
+{% highlight javascript %}
+node.children.each(function(){
+    cache += '<li class="sub"><a href="#'+ this.id + '">'+ $(this).text() + '</a></li>';
+  })
+{% endhighlight %}
 
 显然他在这为链接设置了href，但是调用了h2对象（也就是侧边栏目录的二级菜单）的id属性，而用Firebug查看最终解析成的html文件，发现&lt;h2&gt;的id是不存在的，于是自然想到这在之前先为h2设置唯一的id属性。这个用jQuery很容易就能实现：
-
-    $("h2").each(function(){$(this).attr("id","_"+$(this).text());});
+{% highlight javascript %}
+$("h2").each(function(){$(this).attr("id","_"+$(this).text());});
+{% endhighlight %}
 
 ##域名绑定##
 
