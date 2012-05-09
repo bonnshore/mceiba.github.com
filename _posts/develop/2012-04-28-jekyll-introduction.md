@@ -13,16 +13,16 @@ description: |
   1. 安装[RubyInstaller](http://rubyinstaller.org/downloads/)
   2. 安装[DevKit](http://rubyinstaller.org/downloads/)
   3. 安装Jekyll：
-  {% highlight bash %}
-  $ gem install jekyll
-  {% endhighlight %}
+{% highlight bash %}
+$ gem install jekyll
+{% endhighlight %}
   4. 安装Python（推荐Python 2.7.2）
   5. 安装Python [setuptools](http://pypi.python.org/pypi/setuptools)，找对应的exe文件下载安装。
   6. 添加 C:\Python27\Scripts（假设你的Python安装在C盘根目录下）到你的path
   7. 安装pygments:
-  {% highlight bash %}
-  $ easy_install pygments
-  {% endhighlight %}
+{% highlight bash %}
+$ easy_install pygments
+{% endhighlight %}
   8. 安装windows下的Git——[msysGit](http://msysgit.github.com/)
   9. 在Github上创建一个账户。Github会引导你如何进行简单的设置，如果你没用过Git，没关系，只管照做。
 
