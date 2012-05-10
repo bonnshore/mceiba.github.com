@@ -568,7 +568,7 @@ than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
 
 ###强调
 
-Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：
+Markdown 使用星号（<code>\*</code>）和底线（<code>\_</code>）作为标记强调字词的符号，被 <code>\*</code> 或 <code>\_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>\*</code> 或 <code>\_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：
 
 <pre><code>*single asterisks*
 
