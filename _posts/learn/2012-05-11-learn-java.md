@@ -2,7 +2,7 @@
 layout: post
 title: "Thinking in Java 学习笔记"
 category: learning
-tags: [learn,java]
+tags: [learn, java]
 description: |
   java的经典名著，第一次惧于他的厚度，现在回过头来看看也感觉受益匪浅，java是我喜欢的语言之一，正如他的名字一样优雅。
 ---
