@@ -8,9 +8,9 @@ markdown: rdiscount
 pygments: true
 
 topbar:
-  - 
-    url : '/footmark/index.html'
-    title : 'Footmark'
+  #- 
+  #  url : '/footmark/index.html'
+  #  title : 'Footmark'
   - 
     url : '/develop/index.html'
     title : '技术之旅'
