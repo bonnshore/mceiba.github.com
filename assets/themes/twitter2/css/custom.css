@@ -176,3 +176,11 @@ h3 {margin:0px 0 10px 0}
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+
+/* SPLASH PAGES ================================================= */
+.description div {
+  padding:10px;
+}
+.description h4 {
+  margin-bottom:10px
+}

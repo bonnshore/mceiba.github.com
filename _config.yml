@@ -14,6 +14,9 @@ topbar:
   - 
     url : '/develop/index.html'
     title : '技术之旅'
+  -
+    url : '/itnews/index.html'
+    title : 'IT News'
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.

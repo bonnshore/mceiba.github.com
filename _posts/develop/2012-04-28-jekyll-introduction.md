@@ -161,6 +161,22 @@ node.children.each(function(){
 $("h2").each(function(){$(this).attr("id","_"+$(this).text());});
 {% endhighlight %}
 
+### 5. 类似于could't parse YAML at line 6 column 6 \(Psych::SyntaxError\)的问题
+
+YAM了貌似对空格比较敏感，需要一个空格的时候就不要敲多个空格，同时注意你的Tab缩进，_config.yml中的属性都是key: value形式的，别忘了：后边有个空格。
+
+另外post文件头中的属性配置也要注意：
+<pre><code>
+---
+layout: post
+title : post_title
+categories : category_name
+description: |
+  This is a decription.
+---
+</code></pre>
+description第二行开头我敲了一个Tab（四个字符宽度）就出错了，一些细节，注意一下就好了。
+
 ##域名绑定##
 
 Github会为你分配一个类似于USERNAME.github.com的二级域名，如果你自己有一个顶级域名，你可以将它与Github提供的一个共有IP(204.232.175.78)绑定，这个在[Github Pages](http://help.github.com/pages/)上有详细介绍，在你的网站根目录下增加一个CNAME文件，里边写你自己的域名，再给你的域名增加一条A记录，稍等片刻之后就可以用你的域名访问了。
