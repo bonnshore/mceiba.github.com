@@ -14,7 +14,7 @@ title: "技术文档 &amp; 学习笔记"
 ##2 - 学习笔记
 
 <ul class="thumbnails">
-  {% assign pages_icons = site.tags.learn %}
+  {% assign pages_icons = site.categories.learning %}
   {% include custom/pages_reversed %}
 </ul>
 
