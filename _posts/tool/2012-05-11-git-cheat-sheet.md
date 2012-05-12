@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git备忘录"
+title: "Git简明手册"
 category: tool
 tags: [git, github, heroku]
 description: |
