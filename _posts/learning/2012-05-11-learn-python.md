@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Learning Python 学习笔记"
+title: "Learning Python"
 category: learning
 tags: [python]
 description: |

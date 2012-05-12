@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thinking in Java 学习笔记"
+title: "Thinking in Java"
 category: learning
 tags: [java]
 description: |
