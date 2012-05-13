@@ -17,6 +17,9 @@ topbar:
   -
     url : '/itnews/index.html'
     title : '科技潮流'
+  -
+    url : '/open/index.html'
+    title : '开源项目'
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
