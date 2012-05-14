@@ -186,7 +186,7 @@ False
 
 ####文件
 
-{% highlight python %}
+{% highlight python linenos %}
 #基本文件操作
 f=open(r'C:\Users\Calvin\vim\python\somefile.txt','w')
 f.write('name: Calvin\n')
