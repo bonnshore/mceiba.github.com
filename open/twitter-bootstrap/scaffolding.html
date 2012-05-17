@@ -80,7 +80,7 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>基本构架</h1>
-        <p class="lead">Bootstrap基于应对性的12列布局，还包括了固定的和流动宽度的布局。</p>
+        <p class="lead">Bootstrap基于自适应的12列布局，还包括了固定的和流动宽度的布局。</p>
         <div class="subnav">
           <ul class="nav nav-pills">
             <li><a href="#global">全局样式</a></li>
@@ -88,7 +88,7 @@
             <li><a href="#fluidGridSystem">流动网格布局</a></li>
             <li><a href="#gridCustomization">定制网格</a></li>
             <li><a href="#layouts">布局设计</a></li>
-            <li><a href="#responsive">应对性设计</a></li>
+            <li><a href="#responsive">自适应设计</a></li>
           </ul>
         </div>
       </header>
@@ -136,7 +136,7 @@
 ================================================== -->
 <section id="gridSystem">
   <div class="page-header">
-    <h1>固定网格布局 <small>能应对变化的12列网格</small></h1>
+    <h1>固定网格布局 <small>自适应的12列网格</small></h1>
   </div>
 
   <div class="row show-grid">
@@ -172,7 +172,7 @@
   <div class="row">
     <div class="span4">
       <p>Bootstrap提供的默认网格布局是一个<strong>940px宽，12列</strong>的网格。</p>
-      <p>同时提供了4种应对性的变种来适应不同的种类的设备和屏幕分辨率，这包括：手机、平板、小型电脑以及大多数的宽屏幕电脑。</p>
+      <p>同时提供了4种自适应的变种来适应不同的种类的设备和屏幕分辨率，这包括：手机、平板、小型电脑以及大多数的宽屏幕电脑。</p>
     </div><!-- /.span -->
     <div class="span4">
 <pre class="prettyprint linenums">
@@ -252,7 +252,7 @@
 ================================================== -->
 <section id="fluidGridSystem">
   <div class="page-header">
-    <h1>流动网格布局 <small>应对性的，基于百分比的12列</small></h1>
+    <h1>流动网格布局 <small>自适应的，基于百分比的12列</small></h1>
   </div>
 
   <h2>流动列</h2>
@@ -290,7 +290,7 @@
   <div class="row">
     <div class="span4">
       <h3>用百分比代替像素数</h3>
-      <p>流动网格布局系统使用百分比代替固定的像素数来表示列宽，它 和固定式的网格布局一样，也采用了应对性的设计，用来确保适应不同的屏幕分辨率和设备。</p>
+      <p>流动网格布局系统使用百分比代替固定的像素数来表示列宽，它 和固定式的网格布局一样，也采用了自适应的设计，用来确保适应不同的屏幕分辨率和设备。</p>
     </div><!-- /.span -->
     <div class="span4">
       <h3>流动行</h3>
@@ -386,8 +386,8 @@
       <p>定制网格意味着你需要改变三个<code>@grid*</code>变量，并且重新编译Bootstrap。改变<strong>variables.less</strong>中的网格变量，可以用<a href="less.html#compiling">四种重新编译的方法</a>之一来实现。如果你想增加更多的列，要确保在<strong>grid.less</strong>中增加相应的CSS文件。</p>
     </div><!-- /.span -->
     <div class="span4">
-      <h3>保持应对性</h3>
-      <p>只有默认的940px宽的固定网格布局的定制才需要考虑应对性。为了保证Bootstrap应对的特性，你需要改变<strong>responsive.less</strong>中的布局属性。</p>
+      <h3>保持自适应</h3>
+      <p>只有默认的940px宽的固定网格布局的定制才需要考虑自适应。为了保证Bootstrap自适应的特性，你需要改变<strong>responsive.less</strong>中的布局属性。</p>
     </div><!-- /.span -->
   </div><!-- /.row -->
 
@@ -447,7 +447,7 @@
 ================================================== -->
 <section id="responsive">
   <div class="page-header">
-    <h1>应对性设计 <small>不同设备和屏幕分辨率的media queries</small></h1>
+    <h1>自适应设计 <small>不同设备和屏幕分辨率的media queries</small></h1>
   </div>
   <!-- Supported devices -->
   <div class="row">
@@ -507,7 +507,7 @@
       </table>
 
       <h3>需要加入meta标签</h3>
-      <p>为了确保设备显示合适的应对性页面文件头中需要包含viewport meta标签。</p>
+      <p>为了确保设备显示合适的自适应页面文件头中需要包含viewport meta标签。</p>
       <pre class="prettyprint linenums">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
     </div><!-- /.span -->
   </div><!-- /.row -->
@@ -518,13 +518,13 @@
   <h2>使用media queries</h2>
   <div class="row">
     <div class="span4">
-      <p>Bootstrap不会自动的包含media queries，但是理解和加入media queries是很简单的，只需要简单的配置。你可以选择不同的方式使用Bootstrap的应对性（responsive）特性：</p>
+      <p>Bootstrap不会自动的包含media queries，但是理解和加入media queries是很简单的，只需要简单的配置。你可以选择不同的方式使用Bootstrap的自适应（responsive）特性：</p>
       <ol>
         <li>使用编译过的版本<strong>bootstrap-responsive.css</strong></li>
         <li>增加<code>@import "responsive.less"</code>，重新编译Bootstrap</li>
         <li>作为一个独立的文件改变和重新编译<strong>responsive.less</strong></li>
       </ol>
-      <p><strong>为什么不是仅仅的包含进去？</strong> 老实说，不是任何地方都需要应对性（responsive）。当然也不鼓励开发者移除这个特性，我们最好的配置方法是：</p>
+      <p><strong>为什么不是仅仅的包含进去？</strong> 老实说，不是任何地方都需要自适应（responsive）。当然也不鼓励开发者移除这个特性，我们最好的配置方法是：</p>
     </div><!-- /.span -->
     <div class="span8">
 <pre class="prettyprint linenums">
@@ -545,7 +545,7 @@
   <br>
 
   <!-- Responsive utility classes -->
-  <h2>应对式（Responsive）的实用类</h2>
+  <h2>自适应（Responsive）的实用类</h2>
   <div class="row">
     <div class="span4">
       <h3>这又是什么</h3>

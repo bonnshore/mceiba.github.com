@@ -238,5 +238,153 @@ YES
 
 ###第5章 数字
 
+python的数字并不是真正的对象类型，而是一组类似类型的分类，整数允许无穷精度（当然只要你的内存允许）。数字类型包括整数、浮点数、十六进制（0x）、八进制（0o）、二进制（0b）、复数等，不同的数字类型出现时，python会自动启用对应的运算法则。
+
+不同进制的常量在程序中都产生一个整数对象，内置对象`hes(I), oct(I), bin(I)`可以把一个整数转化成这三种进制表示的字符串。
+
+产生复数对象的方式：
+{% highlight python %}
+>>> 1+2j
+(1+2j)
+>>> 1+2J
+(1+2j)
+>>> complex(1,2)
+(1+2j)
+{% endhighlight %}
+
+处理数字对象的工具：
+
+- 表达式操作符：`+, -, *, /, >>, **, &`等
+- 内置数学函数：`pow, abs, round, int, hex, bin`等
+- 公用模块：`random, math`
+
+python表达式操作符及程序：
+
+- `yield x`：生成器函数发送协议
+- `lambda args: expression`：生成匿名函数
+- `x if y else z`：三元选择表达式，python中没有`boolean_exp ? value1:value2`这样的三目运算符，也没有自增自减
+- `x or y, x and y, not x `：逻辑或（x为假时才会计算y）、与（x为真时才会计算y）、非
+- `x in y, x not in y; x is y, x is not y`：成员关系（可迭代对象、集合），对象实体测试（测试内存地址，严格意义上的相等）
+- `x<y, x<=y, x>y, x>=y, x==y, x!=y`：大小比较，集合操作，比较操作符可以连续使用，如x<y<z等同于x<y and y<z
+-`x|y, x^y, x&y`：逐位或、异或、与，集合并、对称差、交集
+- `x<<y, x>>y`：左移、右移
+- `x+y, x-y`：加减，集合合并、差集
+- `x*y, x%y, x/y, x//y, -x, +x, ~x, x**y`：乘法/重复，余数/格式化，真除（结果依赖于对象类型）、floor除法（截断除法，忽略小数部分）、识别逐位求补（取反），幂运算，混合类型运算自动升级
+- `x[i], x[i:j:k], x(...), x.attr, (...), [...], {...}`：索引，分片（等同于x[slice(i,j,k)]），调用，属性引用，元组，列表，字典/集合
+
+python中的变量：
+
+- 变量在第一次赋值是创建
+- 变量在表达式中使用时被替换为实际值
+- 变量在表达式中使用前必须赋值
+- 变量不需要声明
+
+数字格式的显示：
+{% highlight python %}
+>>> num=1/3.0
+>>> num
+0.3333333333333333
+>>> print(num)
+0.333333333333
+>>> str(num),repr(num)
+('0.333333333333', '0.3333333333333333')
+>>> '%e' % num
+'3.333333e-01'
+>>> '%4.2f' % num
+'0.33'
+>>> '{0:4.2f}'.format(num)
+'0.33'
+>>> '{0:o},{1:x},{2:b}'.format(64,64,64)
+'100,40,1000000'
+>>> '%o, %x, %X' % (64,255, 255)
+'100, ff, FF'
+>>> int('64'),int('100',8),int('40',16),int('0x40',16),int('1000000',2),int('0b1000000',2)
+(64, 64, 64, 64, 64, 64)
+>>> eval('64'),eval('0o100'),eval('0x40'),eval('0b1000000')
+(64, 64, 64, 64)
+{% endhighlight %}
+
+repr和str类似于默认的交互模式回显和打印的区别，两者都会把任意对象转换成字符串，repr会表现出对象的原始格式，str会显示相对于用户比较友好的格式，这是python比较人性化的地方。
+
+浮点数在计算机中是近似的存储，所以浮点数运算缺乏精确性，比如：
+{% highlight python %}
+>>> 0.1+0.1+0.1-0.3
+5.551115123125783e-17
+{% endhighlight %}
+
+提高进度的方法：
+
+- 引入小数对象
+- 使用分数类型
+
+{% highlight python %}
+>>> from decimal import Decimal as dec
+>>> dec('0.1')+dec('0.1')+dec('0.1')-dec('0.3')
+Decimal('0.0')
+>>> from fractions import Fraction as fra
+>>> fra(1,10)+fra(1,10)+fra(1,10)-fra(3,10)
+Fraction(0, 1)
+{% endhighlight %}
+
+浮点数精度、小数、分数的一些基本操作：
+{% highlight python %}
+# 分数操作
+from fractions import Fraction as fra
+>>> x=fra(1,3)
+>>> y=fra('.25')
+>>> x+y
+Fraction(7, 12)
+>>> print(x+y)
+7/12
+# 临时精度设置
+>>> import decimal
+>>> decimal.Decimal('1.00')/decimal.Decimal('3.00')
+Decimal('0.3333333333333333333333333333')
+>>> with decimal.localcontext() as ctx:
+     ctx.prec=2
+     decimal.Decimal('1.00')/decimal.Decimal('3.00')
+
+     
+Decimal('0.33')
+# 全局精度设置
+>>> decimal.getcontext().prec=2
+>>> pay=decimal.Decimal(str(1999+1.33))
+>>> pay
+Decimal('2000.33')
+# 转换和混合类型
+>>> (2.5).as_integer_ratio()
+(5, 2)
+>>> z=fra(*(2.5).as_integer_ratio())
+>>> z
+Fraction(5, 2)
+>>> float(z)
+2.5
+>>> fra.from_float(2.5)
+Fraction(5, 2)
+>>> a=fra(137,349)
+>>> a
+Fraction(137, 349)
+>>> a.limit_denominator(10)
+Fraction(2, 5)
+{% endhighlight %}
+
+在python布尔类型（bool），其值True和False是预先定义的变量名，实际上是int类型的子类，他们的行为和1,0是一样的：
+{% highlight python %}
+>>> type(True)
+<type 'bool'>
+>>> isinstance(True,int)
+True
+>>> True==1
+True
+>>> True is 1
+False
+>>> True or False
+True
+>>> True+4
+5
+{% endhighlight %}
+
+###第6章 动态类型简介
+
 
 <div class="alert alert-block alert-warn form-inline" style="text-align:center; vertical-align:middle; font-size: 16px; font-weight:300;">To be continue!</div>
